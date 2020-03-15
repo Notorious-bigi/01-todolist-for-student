@@ -2,6 +2,14 @@ import React from 'react';
 import './App.css';
 
 class App extends React.Component {
+    componentDidMount = () => {
+      console.log("This is lifecycle component mount");
+    };
+
+    log = () => {
+        console.log("On ADD ITEM");
+    }
+
     render = () => {
         return (
             <div className="App">
@@ -10,7 +18,7 @@ class App extends React.Component {
                         <h3 className="todoList-header__title">What to Learn</h3>
                         <div className="todoList-newTaskForm">
                             <input type="text" placeholder="New task name"/>
-                            <button>Add</button>
+                            <button onClick={this.log}>Add</button>
                         </div>
                     </div>
                     <div className="todoList-tasks">
